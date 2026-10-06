@@ -1,0 +1,138 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript | Minuta Fresh</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">🍧</div>
+            <span>Minuta <b>Fresh</b></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="javascript.html" class="active">JavaScript</a></li>
+            <li><a href="jquery.html">jQuery</a></li>
+            <li><a href="json.html">JSON</a></li>
+            <li><a href="hosting.html">Hosting y Dominios</a></li>
+            <li><a href="cuestionario.html">Cuestionario Web</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<div class="page-header">
+    <h1>JavaScript</h1>
+    <p>El lenguaje que agrega comportamiento e interactividad a las páginas web.</p>
+</div>
+
+
+<main class="content">
+
+    <h2>¿Qué es JavaScript?</h2>
+
+    <p>
+        JavaScript es un lenguaje de programación utilizado principalmente
+        para agregar interactividad y comportamiento a las páginas web.
+        Permite responder a acciones realizadas por los usuarios.
+    </p>
+
+
+    <h2>HTML, CSS y JavaScript</h2>
+
+    <table>
+
+        <tr>
+            <th>Tecnología</th>
+            <th>Función</th>
+        </tr>
+
+        <tr>
+            <td>HTML</td>
+            <td>Define la estructura y contenido de la página.</td>
+        </tr>
+
+        <tr>
+            <td>CSS</td>
+            <td>Controla los colores, tamaños, posiciones y diseño.</td>
+        </tr>
+
+        <tr>
+            <td>JavaScript</td>
+            <td>Agrega comportamiento e interactividad.</td>
+        </tr>
+
+    </table>
+
+
+    <h2>Conceptos básicos</h2>
+
+    <ul>
+        <li><b>Variables:</b> almacenan información.</li>
+        <li><b>Funciones:</b> contienen instrucciones que realizan una tarea.</li>
+        <li><b>Eventos:</b> permiten responder a acciones como click, mouseover o teclado.</li>
+    </ul>
+
+
+    <h2>Ejemplo práctico</h2>
+
+<pre><code>
+let sabor = "Fresa";
+
+function mostrarSabor() {
+    alert("Elegiste una minuta de " + sabor);
+}
+
+document.getElementById("boton")
+    .addEventListener("click", mostrarSabor);
+</code></pre>
+
+
+    <h2>¿Cómo funciona?</h2>
+
+    <p>
+        En este ejemplo se crea una variable llamada <b>sabor</b>.
+        Después se crea una función llamada <b>mostrarSabor()</b>.
+        Finalmente, JavaScript detecta cuando el usuario hace clic
+        en un botón y ejecuta la función.
+    </p>
+
+
+    <button class="btn" onclick="mostrarEjemploJS()">
+        Probar ejemplo
+    </button>
+
+
+    <h2>Fuente de consulta</h2>
+
+    <p>
+        MDN Web Docs — JavaScript.
+    </p>
+
+</main>
+
+
+<footer>
+    <p>© 2026 Minuta Fresh</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```

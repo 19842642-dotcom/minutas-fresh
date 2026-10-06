@@ -1,0 +1,171 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jQuery | Minuta Fresh</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">🍧</div>
+            <span>Minuta <b>Fresh</b></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="jquery.html" class="active">jQuery</a></li>
+            <li><a href="json.html">JSON</a></li>
+            <li><a href="hosting.html">Hosting y Dominios</a></li>
+            <li><a href="cuestionario.html">Cuestionario Web</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<div class="page-header">
+    <h1>jQuery</h1>
+    <p>Una librería que facilita el trabajo con JavaScript.</p>
+</div>
+
+
+<main class="content">
+
+    <h2>¿Qué es jQuery?</h2>
+
+    <p>
+        jQuery es una librería de JavaScript creada para simplificar
+        tareas comunes como manipular elementos HTML, manejar eventos
+        y crear efectos y animaciones.
+    </p>
+
+
+    <h2>¿Por qué nació?</h2>
+
+    <p>
+        jQuery nació para facilitar el desarrollo web y evitar parte
+        de las diferencias que existían entre los navegadores.
+        Su sintaxis permitió escribir algunas operaciones de forma
+        más corta.
+    </p>
+
+
+    <h2>Sintaxis básica</h2>
+
+<pre><code>
+$("#titulo").hide();
+
+$(".boton").click(function() {
+    alert("Hola");
+});
+</code></pre>
+
+
+    <p>
+        El símbolo <b>$</b> es una parte característica de la sintaxis
+        de jQuery y se utiliza para seleccionar elementos.
+    </p>
+
+
+    <h2>Ventajas</h2>
+
+    <ul>
+        <li>Sintaxis sencilla.</li>
+        <li>Facilita la manipulación del DOM.</li>
+        <li>Incluye efectos y animaciones.</li>
+        <li>Fue muy útil para compatibilidad entre navegadores.</li>
+    </ul>
+
+
+    <h2>Desventajas</h2>
+
+    <ul>
+        <li>Puede ser innecesario para proyectos modernos sencillos.</li>
+        <li>Agrega una dependencia externa.</li>
+        <li>JavaScript moderno ya incorpora muchas funciones similares.</li>
+    </ul>
+
+
+    <h2>JavaScript vs jQuery</h2>
+
+    <table>
+
+        <tr>
+            <th>JavaScript Vanilla</th>
+            <th>jQuery</th>
+        </tr>
+
+        <tr>
+            <td>
+                document.getElementById("mensaje").style.display = "none";
+            </td>
+
+            <td>
+                $("#mensaje").hide();
+            </td>
+        </tr>
+
+    </table>
+
+
+    <h2>Ejemplo de animación</h2>
+
+    <button class="btn" id="botonJquery">
+        Mostrar / Ocultar
+    </button>
+
+    <div id="cajaJquery"
+         style="background:#FF6B6B;
+                color:white;
+                padding:30px;
+                margin-top:20px;
+                border-radius:15px;">
+
+        ¡Esta caja utiliza un efecto de jQuery!
+
+    </div>
+
+
+    <h2>Fuente de consulta</h2>
+
+    <p>
+        jQuery Documentation y W3Schools.
+    </p>
+
+</main>
+
+
+<footer>
+    <p>© 2026 Minuta Fresh</p>
+</footer>
+
+
+<script>
+$(document).ready(function(){
+
+    $("#botonJquery").click(function(){
+
+        $("#cajaJquery").slideToggle();
+
+    });
+
+});
+</script>
+
+</body>
+</html>
+```

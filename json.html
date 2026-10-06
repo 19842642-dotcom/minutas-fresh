@@ -1,0 +1,182 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JSON | Minuta Fresh</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">🍧</div>
+            <span>Minuta <b>Fresh</b></span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="jquery.html">jQuery</a></li>
+            <li><a href="json.html" class="active">JSON</a></li>
+            <li><a href="hosting.html">Hosting y Dominios</a></li>
+            <li><a href="cuestionario.html">Cuestionario Web</a></li>
+
+        </ul>
+
+    </nav>
+</header>
+
+
+<div class="page-header">
+
+    <h1>JSON</h1>
+
+    <p>
+        JavaScript Object Notation para el intercambio de información.
+    </p>
+
+</div>
+
+
+<main class="content">
+
+    <h2>¿Qué es JSON?</h2>
+
+    <p>
+        JSON significa JavaScript Object Notation. Es un formato de texto
+        utilizado para almacenar y transportar información.
+        Es muy utilizado para la comunicación entre aplicaciones web,
+        servidores y APIs.
+    </p>
+
+
+    <h2>Estructura básica</h2>
+
+    <p>
+        JSON utiliza pares de clave y valor.
+    </p>
+
+
+<pre><code>
+{
+    "nombre": "Minuta de Fresa",
+    "precio": 2.50,
+    "disponible": true
+}
+</code></pre>
+
+
+    <h2>Objetos y arreglos</h2>
+
+<pre><code>
+{
+    "minutas": [
+        {
+            "nombre": "Fresa",
+            "precio": 2.50
+        },
+        {
+            "nombre": "Mango",
+            "precio": 2.75
+        },
+        {
+            "nombre": "Tamarindo",
+            "precio": 2.50
+        }
+    ]
+}
+</code></pre>
+
+
+    <h2>Objeto JavaScript vs cadena JSON</h2>
+
+    <table>
+
+        <tr>
+            <th>Objeto JavaScript</th>
+            <th>JSON</th>
+        </tr>
+
+        <tr>
+
+            <td>
+
+<pre><code>
+const minuta = {
+    nombre: "Fresa",
+    precio: 2.50
+};
+</code></pre>
+
+            </td>
+
+            <td>
+
+<pre><code>
+{
+    "nombre": "Fresa",
+    "precio": 2.50
+}
+</code></pre>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <h2>JSON y las aplicaciones web</h2>
+
+    <p>
+        Cuando una aplicación necesita información de un servidor,
+        puede recibir los datos en formato JSON. Por ejemplo,
+        una aplicación podría solicitar una lista de minutas
+        disponibles y recibir los nombres, precios e ingredientes
+        mediante JSON.
+    </p>
+
+
+    <h2>Ejemplo con una API</h2>
+
+<pre><code>
+fetch("https://ejemplo.com/minutas")
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        console.log(datos);
+    });
+</code></pre>
+
+
+    <p>
+        En este ejemplo, JavaScript solicita información y convierte
+        la respuesta a un objeto que puede utilizar la aplicación.
+    </p>
+
+
+    <h2>Fuentes de consulta</h2>
+
+    <p>
+        MDN Web Docs y JSON.org.
+    </p>
+
+</main>
+
+
+<footer>
+    <p>© 2026 Minuta Fresh</p>
+</footer>
+
+</body>
+</html>
+```

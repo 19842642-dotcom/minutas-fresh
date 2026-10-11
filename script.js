@@ -1,109 +1,116 @@
-```javascript
-// ==========================================
-// EJEMPLO DE JAVASCRIPT
-// ==========================================
+// MODO CLARO Y MODO OSCURO
+document.addEventListener("DOMContentLoaded", function () {
+    const botonTema = document.getElementById("themeToggle");
 
-function mostrarEjemploJS() {
+    if (!botonTema) return;
 
-    alert("¡Elegiste una deliciosa minuta de fresa! 🍓");
+    const icono = botonTema.querySelector("i");
 
-}
+    function aplicarTema(oscuro) {
+        document.body.classList.toggle("modo-oscuro", oscuro);
 
-
-// ==========================================
-// CUESTIONARIO
-// ==========================================
-
-function calificarQuiz() {
-
-    let respuestas = {
-
-        p1: "b",
-        p2: "a",
-        p3: "b",
-        p4: "a",
-        p5: "a",
-        p6: "b",
-        p7: "a",
-        p8: "b",
-        p9: "a",
-        p10: "a"
-
-    };
-
-
-    let puntos = 0;
-
-
-    for (let pregunta in respuestas) {
-
-        let seleccionada =
-            document.querySelector(
-                'input[name="' + pregunta + '"]:checked'
-            );
-
-
-        if (seleccionada) {
-
-            if (seleccionada.value === respuestas[pregunta]) {
-
-                puntos++;
-
-            }
-
+        if (icono) {
+            icono.classList.toggle("fa-moon", !oscuro);
+            icono.classList.toggle("fa-sun", oscuro);
         }
 
+        botonTema.setAttribute(
+            "aria-label",
+            oscuro ? "Cambiar a modo claro" : "Cambiar a modo oscuro"
+        );
     }
 
+    const temaGuardado = localStorage.getItem("tema");
+    aplicarTema(temaGuardado === "oscuro");
 
-    let resultado = document.getElementById("resultado");
+    botonTema.addEventListener("click", function () {
+        const estaOscuro = document.body.classList.contains("modo-oscuro");
+        const nuevoTemaOscuro = !estaOscuro;
+
+        aplicarTema(nuevoTemaOscuro);
+        localStorage.setItem("tema", nuevoTemaOscuro ? "oscuro" : "claro");
+    });
+});
 
 
-    let porcentaje = (puntos / 10) * 100;
-
-
-    if (puntos >= 8) {
-
-        resultado.innerHTML =
-            "🎉 Excelente trabajo. Obtuviste " +
-            puntos +
-            " de 10 respuestas correctas (" +
-            porcentaje +
-            "%).";
-
-        resultado.style.background = "#4ECDC4";
-        resultado.style.color = "white";
-
-    }
-
-    else if (puntos >= 5) {
-
-        resultado.innerHTML =
-            "👍 Buen trabajo. Obtuviste " +
-            puntos +
-            " de 10 respuestas correctas (" +
-            porcentaje +
-            "%).";
-
-        resultado.style.background = "#FFE66D";
-        resultado.style.color = "#333";
-
-    }
-
-    else {
-
-        resultado.innerHTML =
-            "📚 Puedes repasar nuevamente las páginas informativas. " +
-            "Obtuviste " +
-            puntos +
-            " de 10 respuestas correctas (" +
-            porcentaje +
-            "%).";
-
-        resultado.style.background = "#FF6B6B";
-        resultado.style.color = "white";
-
-    }
-
+// MENSAJE DE LOS PRODUCTOS
+function mostrarMensaje(producto) {
+    alert(
+        "Has seleccionado: " + producto +
+        "\n\nGracias por visitar Minuta Fresh."
+    );
 }
-```
+
+
+// EJEMPLO DE JAVASCRIPT
+function mostrarEjemploJS() {
+    alert("¡JavaScript funciona correctamente en Minuta Fresh!");
+}
+
+
+// CALIFICAR CUESTIONARIO
+function calificarQuiz() {
+    const respuestasCorrectas = {
+        p1: "b",
+        p2: "a",
+        p3: "c"
+    };
+
+    let puntos = 0;
+    let total = Object.keys(respuestasCorrectas).length;
+
+    for (const pregunta in respuestasCorrectas) {
+        const seleccionada = document.querySelector(
+            'input[name="' + pregunta + '"]:checked'
+        );
+
+        if (seleccionada && seleccionada.value === respuestasCorrectas[pregunta]) {
+            puntos++;
+        }
+    }
+
+    alert("Tu resultado es: " + puntos + " de " + total);
+}
+
+
+// ENVIAR MENSAJE A DISCORD DESDE EL FORMULARIO DE CONTACTO
+document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.getElementById("formContacto");
+
+    if (!formulario) return;
+
+    formulario.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+
+        const nombre = document.getElementById("nombre").value;
+        const correo = document.getElementById("correo").value;
+        const mensaje = document.getElementById("mensaje").value;
+
+        // 👇 PEGA TU ENLACE DE DISCORD AQUÍ ENTRE LAS COMILLAS 👇
+        const webhookURL = "https://discord.com/api/webhooks/1557746325364412486/hARqnbRxguhCotdpoTwd-Bpl9jXsKJjSdO4-34EN4Uzc9uxhPg5MJxq_qhLmRI_0Gm2z";
+
+        const contenido = {
+            content: `📩 **Nuevo mensaje de Minuta Fresh**\n👤 **Nombre:** ${nombre}\n📧 **Correo:** ${correo}\n💬 **Mensaje:** ${mensaje}`
+        };
+
+        fetch(webhookURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(contenido)
+        })
+        .then(response => {
+            if (response.ok) {
+                alert("¡Mensaje enviado con éxito a Discord!");
+                formulario.reset();
+            } else {
+                alert("No se pudo enviar el mensaje, inténtalo de nuevo.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Hubo un error al enviar el mensaje.");
+        });
+    });
+});

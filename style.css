@@ -1,12 +1,15 @@
-```css
-/* ==========================================
-   MINUTA FRESH
-   ESTILO VERDE OLIVO + BEIGE ELEGANTE
-   ========================================== */
+
+:root {
+    --verde-oscuro: #4D5638;
+    --verde-salvia: #707A4E;
+    --verde-claro: #929B70;
+    --beige: #eedabb;
+    --crema: #F5EBD8;
+    --blanco: #FFFDF7;
+    --texto: #3D432E;
+}
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -15,791 +18,584 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #f1e0c4;;
-    color: #3F432D;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--beige);
+    color: var(--texto);
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+}
 
-/* ==========================================
-   PALETA
-   ========================================== */
+p {
+    line-height: 1.8;
+}
 
-/*
-   Verde olivo oscuro: #4D5638
-   Verde olivo:       #707A4E
-   Verde salvia:      #9AA582
-   Beige:             #E8DDC8
-   Beige claro:       #F7F1E5
-   Café:              #725C43
-   Dorado:            #B49A62
-*/
+/* NAVBAR */
+.navbar {
+    background: rgba(77, 86, 56, 0.97);
+    border-bottom: 1px solid rgba(231, 201, 154, 0.4);
+    padding: 10px 0;
+}
 
+.navbar-brand {
+    color: white !important;
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 100%;
+}
 
-/* ==========================================
-   NAVBAR
-   ========================================== */
+.navbar-brand strong {
+    color: var(--beige);
+}
 
-header {
-    background: rgba(247, 241, 229, 0.96);
-    box-shadow: 0 3px 18px rgba(77, 86, 56, 0.15);
+.navbar-brand img,
+.navbar-brand .logo-img,
+.navbar-brand .logo {
+    width: 45px !important;
+    height: 45px !important;
+    min-width: 45px;
+    min-height: 45px;
+    max-width: 45px !important;
+    max-height: 45px !important;
+    object-fit: contain !important;
+    display: inline-block;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 2px solid var(--beige);
+}
 
-    position: sticky;
-    top: 0;
+.nav-link {
+    color: #F5EBD8 !important;
+    font-size: 0.9rem;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--beige) !important;
+}
+
+/* BOTÓN MODO CLARO Y OSCURO */
+.theme-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    margin: 5px;
+    padding: 0;
+    border: 1px solid #858F6B;
+    border-radius: 50%;
+    background: var(--beige);
+    color: var(--verde-oscuro);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    position: relative;
     z-index: 1000;
 }
 
-.navbar {
-    min-height: 78px;
-    max-width: 1200px;
-
-    margin: auto;
-    padding: 10px 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.theme-btn:hover {
+    background: var(--verde-salvia);
+    color: #FFFFFF;
+    transform: rotate(20deg) scale(1.05);
 }
 
-
-/* LOGO */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    font-size: 20px;
-    font-weight: 500;
-
-    color: #4D5638;
-
-    white-space: nowrap;
+.theme-btn i {
+    display: inline-block;
+    line-height: 1;
 }
 
-.logo b {
-    color: #725C43;
-}
-
-.logo-icon {
-    width: 50px;
-    height: 50px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #F7F1E5;
-
-    border: 2px solid #B49A62;
-}
-
-.logo-icon img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-
-/* MENÚ */
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-
-    list-style: none;
-}
-
-.nav-links a {
-    text-decoration: none;
-
-    color: #4D5638;
-
-    font-size: 14px;
-    font-weight: 500;
-
-    transition: .3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #A0824D;
-}
-
-
-/* ==========================================
-   HERO
-   ========================================== */
-
+/* PORTADA */
 .hero {
-    min-height: 650px;
-
-    max-width: 1200px;
-    margin: auto;
-
-    padding: 70px 30px;
-
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    gap: 50px;
+    padding: 80px 0;
 }
 
-.hero-text {
-    max-width: 600px;
-}
-
-.small-title,
-.section-subtitle {
-    color: #8B7348;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
+.eyebrow {
+    color: var(--verde-oscuro);
+    letter-spacing: 3px;
+    font-weight: 600;
 }
 
 .hero h1 {
-    font-size: 65px;
-
-    color: #4D5638;
-
-    margin: 10px 0;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    color: var(--verde-oscuro);
+    margin-top: 15px;
 }
 
 .hero h1 span {
-    color: #725C43;
+    color: var(--verde-salvia);
 }
 
 .hero h2 {
-    font-size: 25px;
-
-    color: #707A4E;
-
+    font-size: 1.8rem;
     margin-bottom: 20px;
 }
 
-.hero p {
-    line-height: 1.8;
-
-    color: #665E50;
-}
-
-
-/* ==========================================
-   BOTONES
-   ========================================== */
-
-.buttons {
-    margin-top: 30px;
-
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    display: inline-block;
-
-    padding: 13px 25px;
-
-    border-radius: 30px;
-
-    background: #4D5638;
-
-    color: #F7F1E5;
-
-    text-decoration: none;
-
-    font-weight: 600;
-
-    border: none;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.btn:hover {
-    background: #707A4E;
-
-    transform: translateY(-3px);
-}
-
-.btn.secondary {
-    background: #B49A62;
-
-    color: #fff;
-}
-
-.btn.secondary:hover {
-    background: #8B7348;
-}
-
-
-/* ==========================================
-   ÁREA DE IMAGEN PRINCIPAL
-   ========================================== */
-
 .hero-product {
-    width: 420px;
-    height: 420px;
-
-    border-radius: 50%;
-
-    background: #E8DDC8;
-
-    border: 8px solid #9AA582;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    box-shadow: 0 15px 40px rgba(77, 86, 56, 0.20);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
 }
-
-
-/*
-   SI COLOCAS UNA IMAGEN DENTRO DE
-   .hero-product, ocupará este espacio.
-*/
 
 .hero-product img {
     width: 100%;
-    height: 100%;
-
+    height: 500px;
     object-fit: cover;
+    border-radius: 25px;
 }
 
-
-/* ==========================================
-   MINUTA DE EJEMPLO
-   ========================================== */
-
-.minuta {
-    position: relative;
+/* BOTONES */
+.btn-minuta {
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    background: var(--verde-oscuro);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.vaso {
-    width: 170px;
-    height: 220px;
-
-    background: #F7F1E5;
-
-    border-radius: 15px 15px 40px 40px;
-
-    border: 5px solid #707A4E;
-
-    overflow: hidden;
-
-    position: relative;
+.btn-minuta:hover {
+    background: var(--verde-salvia);
+    color: white;
+    transform: translateY(-2px);
 }
 
-.hielo {
-    height: 75%;
-
-    background: #E8DDC8;
-
-    position: absolute;
-
-    bottom: 0;
-
-    width: 100%;
+.btn-outline-minuta {
+    display: inline-block;
+    border: 2px solid var(--verde-oscuro);
+    border-radius: 30px;
+    padding: 10px 23px;
+    color: var(--verde-oscuro);
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.jarabe {
-    height: 35%;
-
-    background: #725C43;
-
-    position: absolute;
-
-    bottom: 0;
-
-    width: 100%;
-
-    opacity: .8;
+.btn-outline-minuta:hover {
+    background: var(--verde-oscuro);
+    color: white;
 }
 
-.sombrilla {
-    position: absolute;
-
-    top: -55px;
-    left: 45px;
-
-    font-size: 55px;
-
-    color: #707A4E;
-}
-
-
-/* ==========================================
-   SECCIONES
-   ========================================== */
-
-.section {
-    max-width: 1100px;
-
-    margin: auto;
-
-    padding: 80px 25px;
-
+/* TÍTULOS */
+.section-title {
     text-align: center;
+    margin-bottom: 45px;
 }
 
-.section h2 {
-    font-size: 35px;
-
-    color: #4D5638;
-
-    margin: 10px 0 40px;
+.section-title small {
+    color: var(--verde-salvia);
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
-
-/* ==========================================
-   TARJETAS
-   ========================================== */
-
-.cards {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
+.section-title h2 {
+    color: var(--verde-oscuro);
+    font-size: 2.5rem;
+    margin-top: 8px;
 }
 
-.card {
-    background: #F7F1E5;
-
-    padding: 30px;
-
-    border-radius: 18px;
-
-    border: 1px solid rgba(112, 122, 78, 0.25);
-
-    box-shadow: 0 8px 25px rgba(77, 86, 56, 0.10);
-
-    transition: .3s;
+/* TARJETAS */
+.minuta-card {
+    background: var(--crema);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid rgba(77, 86, 56, 0.15);
+    transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-7px);
-
-    box-shadow: 0 12px 30px rgba(77, 86, 56, 0.18);
+.minuta-card:hover {
+    transform: translateY(-6px);
 }
 
-.card i {
-    font-size: 40px;
-
-    color: #707A4E;
-
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    color: #4D5638;
-
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #665E50;
-
-    line-height: 1.7;
-}
-
-
-/* ==========================================
-   IMÁGENES DE PRODUCTOS
-   ========================================== */
-
-.product-image {
+.minuta-card img {
     width: 100%;
-    height: 230px;
-
+    height: 260px;
     object-fit: cover;
-
-    border-radius: 15px;
-
-    margin-bottom: 20px;
-
-    border: 3px solid #E8DDC8;
 }
 
+.minuta-card-body {
+    padding: 25px;
+}
 
-/* ==========================================
-   PALETA DE COLORES
-   ========================================== */
+.minuta-card-body h3 {
+    color: var(--verde-oscuro);
+}
 
-.colors {
+.card-bottom {
     display: flex;
-
-    justify-content: center;
-
-    gap: 70px;
-
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
-.color {
-    display: block;
+.precio {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+}
 
-    width: 100px;
-    height: 100px;
+/* INFORMACIÓN */
+.info-box {
+    background: rgba(245, 235, 216, 0.8);
+    border: 1px solid rgba(77, 86, 56, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    height: 100%;
+}
 
+.info-box h3 {
+    color: var(--verde-oscuro);
+}
+
+.color-circle {
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-
-    margin: auto auto 15px;
-
-    border: 5px solid #F7F1E5;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+    margin: 0 auto 20px;
 }
 
-.c1 {
+.verde-oscuro {
     background: #4D5638;
 }
 
-.c2 {
-    background: #9AA582;
+.verde-salvia {
+    background: #707A4E;
 }
 
-.c3 {
-    background: #E8DDC8;
+.beige {
+    background: #E7C99A;
+    border: 1px solid #c4a878;
 }
 
-.colors h3 {
-    color: #4D5638;
-}
-
-.colors p,
-.colors small {
-    color: #665E50;
-}
-
-.colors small {
-    display: block;
-
-    max-width: 200px;
-
-    margin-top: 5px;
-}
-
-
-/* ==========================================
-   TECNOLOGÍAS
-   ========================================== */
-
-.technology-grid {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-}
-
+/* TECNOLOGÍAS */
 .tech-card {
-    background: #F7F1E5;
-
+    display: block;
+    height: 100%;
     padding: 30px;
-
-    border-radius: 18px;
-
+    border-radius: 20px;
+    background: var(--crema);
+    color: var(--texto);
     text-decoration: none;
-
-    color: #4D5638;
-
-    border: 1px solid rgba(112, 122, 78, 0.20);
-
-    box-shadow: 0 5px 20px rgba(77, 86, 56, 0.08);
-
-    transition: .3s;
+    border: 1px solid rgba(77, 86, 56, 0.15);
+    transition: 0.3s;
 }
 
 .tech-card:hover {
     transform: translateY(-5px);
-
-    background: #E8DDC8;
+    color: var(--verde-oscuro);
 }
 
 .tech-card i {
-    font-size: 40px;
-
-    color: #707A4E;
-
+    font-size: 2.5rem;
+    color: var(--verde-salvia);
     margin-bottom: 15px;
 }
 
-.tech-card p {
-    color: #665E50;
-
-    margin-top: 8px;
+.tech-card h3 {
+    color: var(--verde-oscuro);
 }
 
-
-/* ==========================================
-   PÁGINAS INTERNAS
-   ========================================== */
-
+/* PÁGINAS INFORMATIVAS */
 .page-header {
-    background: #4D5638;
-
-    color: #F7F1E5;
-
-    padding: 75px 20px;
-
     text-align: center;
+    padding: 75px 20px;
+    background: rgba(77, 86, 56, 0.15);
 }
 
 .page-header h1 {
-    font-size: 45px;
+    color: var(--verde-oscuro);
+    font-size: 3rem;
+}
 
+.content-section {
+    padding: 60px 0;
+}
+
+.content-section h2 {
+    color: var(--verde-oscuro);
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.content-section li {
     margin-bottom: 10px;
 }
 
-.page-header p {
-    color: #E8DDC8;
+/* TABLAS */
+.table-minuta,
+.table {
+    border-color: rgba(77, 86, 56, 0.3);
 }
 
-
-/* ==========================================
-   CONTENIDO
-   ========================================== */
-
-.content {
-    max-width: 1000px;
-
-    margin: auto;
-
-    padding: 60px 25px;
+.table th {
+    background: var(--verde-oscuro);
+    color: white;
 }
 
-.content h2 {
-    margin-top: 35px;
-
-    margin-bottom: 15px;
-
-    color: #707A4E;
+.table td {
+    background: var(--crema);
 }
 
-.content p {
-    line-height: 1.8;
-
-    margin-bottom: 15px;
-
-    color: #665E50;
-}
-
-.content ul {
-    line-height: 2;
-
-    margin-left: 25px;
-
-    color: #665E50;
-}
-
-
-/* ==========================================
-   CÓDIGO
-   ========================================== */
-
-pre {
-    background: #303529;
-
-    color: #E8DDC8;
-
+/* BLOQUES DE CÓDIGO */
+.code-box {
+    background: #272B20;
+    color: #E7C99A;
     padding: 25px;
-
-    border-radius: 12px;
-
-    overflow-x: auto;
-
-    margin: 20px 0;
-
-    border-left: 5px solid #B49A62;
-}
-
-code {
-    font-family: Consolas, monospace;
-}
-
-
-/* ==========================================
-   TABLAS
-   ========================================== */
-
-table {
-    width: 100%;
-
-    border-collapse: collapse;
-
-    margin: 25px 0;
-
-    background: #F7F1E5;
-}
-
-th,
-td {
-    border: 1px solid #D6CCB7;
-
-    padding: 15px;
-
-    text-align: left;
-}
-
-th {
-    background: #707A4E;
-
-    color: #F7F1E5;
-}
-
-td {
-    color: #665E50;
-}
-
-
-/* ==========================================
-   CUESTIONARIO
-   ========================================== */
-
-.question {
-    background: #F7F1E5;
-
-    padding: 25px;
-
-    margin-bottom: 20px;
-
     border-radius: 15px;
-
-    border-left: 5px solid #707A4E;
-
-    box-shadow: 0 3px 15px rgba(77,86,56,.08);
+    overflow-x: auto;
+    margin: 20px 0;
 }
 
-.question h3 {
-    color: #4D5638;
+/* CUESTIONARIO */
+.question {
+    background: var(--crema);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(77, 86, 56, 0.15);
+}
 
-    margin-bottom: 15px;
+.question h4 {
+    color: var(--verde-oscuro);
+    margin-bottom: 20px;
 }
 
 .question label {
     display: block;
-
-    padding: 8px;
-
-    color: #665E50;
-
+    padding: 10px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .question label:hover {
-    background: #E8DDC8;
-
-    border-radius: 8px;
+    background: rgba(112, 122, 78, 0.12);
 }
 
-#resultado {
-    margin-top: 25px;
-
-    padding: 20px;
-
-    border-radius: 10px;
-
-    font-weight: bold;
+.question input {
+    margin-right: 8px;
 }
 
+/* CONTACTO */
+.contact-card {
+    background: var(--crema);
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid rgba(77, 86, 56, 0.15);
+}
 
-/* ==========================================
-   FOOTER
-   ========================================== */
+.contact-icon {
+    font-size: 3rem;
+    color: var(--verde-salvia);
+    margin-bottom: 15px;
+}
 
-footer {
-    background: #373D29;
+.form-label {
+    color: var(--verde-oscuro);
+    font-weight: 600;
+}
 
-    color: #E8DDC8;
+.form-control {
+    border: 1px solid #B8A77D;
+    border-radius: 12px;
+    padding: 12px;
+}
 
+.form-control:focus {
+    border-color: var(--verde-salvia);
+    box-shadow: 0 0 0 0.2rem rgba(112, 122, 78, 0.15);
+}
+
+/* PIE DE PÁGINA */
+.footer {
+    background: var(--verde-oscuro);
+    color: var(--beige);
     padding: 25px;
-
-    text-align: center;
+    margin-top: 50px;
 }
-
 
 /* ==========================================
-   RESPONSIVE
-   ========================================== */
+   MODO OSCURO
+========================================== */
 
-@media (max-width: 900px) {
+body.modo-oscuro {
+    background: #25291E !important;
+    color: #F1EBDD !important;
+}
 
-    .navbar {
-        flex-direction: column;
+body.modo-oscuro .navbar {
+    background: #343A2B !important;
+}
 
-        gap: 15px;
+body.modo-oscuro .navbar-brand,
+body.modo-oscuro .navbar a {
+    color: #F1EBDD !important;
+}
+
+body.modo-oscuro .navbar-brand strong {
+    color: #E7C99A !important;
+}
+
+body.modo-oscuro .nav-link {
+    color: #E7C99A !important;
+}
+
+body.modo-oscuro .nav-link:hover,
+body.modo-oscuro .nav-link.active {
+    color: white !important;
+}
+
+body.modo-oscuro .hero h1,
+body.modo-oscuro .section-title h2,
+body.modo-oscuro .content-section h2 {
+    color: #E7C99A !important;
+}
+
+body.modo-oscuro .hero h1 span {
+    color: #AAB68A !important;
+}
+
+body.modo-oscuro .hero h2,
+body.modo-oscuro .eyebrow {
+    color: #F1EBDD !important;
+}
+
+body.modo-oscuro .hero-product {
+    background: #343A28;
+}
+
+body.modo-oscuro .minuta-card,
+body.modo-oscuro .minuta-card-body,
+body.modo-oscuro .info-box,
+body.modo-oscuro .tech-card,
+body.modo-oscuro .question,
+body.modo-oscuro .contact-card,
+body.modo-oscuro .card,
+body.modo-oscuro .container .bg-light {
+    background: #343A28 !important;
+    color: #F1EBDD !important;
+    border-color: #555D3E !important;
+}
+
+body.modo-oscuro .minuta-card-body h3,
+body.modo-oscuro .info-box h3,
+body.modo-oscuro .tech-card h3,
+body.modo-oscuro .question h4,
+body.modo-oscuro .precio {
+    color: #E7C99A !important;
+}
+
+body.modo-oscuro p,
+body.modo-oscuro li {
+    color: #E0DDCF;
+}
+
+body.modo-oscuro .page-header {
+    background: #303524 !important;
+}
+
+body.modo-oscuro .page-header h1 {
+    color: #E7C99A !important;
+}
+
+body.modo-oscuro .table td {
+    background: #343A28 !important;
+    color: #F1EBDD !important;
+}
+
+body.modo-oscuro .table th {
+    background: #4D5638 !important;
+    color: #FFFFFF !important;
+}
+
+body.modo-oscuro .form-label {
+    color: #E7C99A !important;
+}
+
+body.modo-oscuro .form-control {
+    background: #25291E;
+    color: #F1EBDD;
+    border-color: #626A48;
+}
+
+body.modo-oscuro .form-control::placeholder {
+    color: #AAA993;
+}
+
+body.modo-oscuro .footer {
+    background: #171A13;
+}
+
+body.modo-oscuro .btn-outline-minuta {
+    border-color: #E7C99A;
+    color: #E7C99A;
+}
+
+body.modo-oscuro .btn-outline-minuta:hover {
+    background: #E7C99A;
+    color: #25291E;
+}
+
+body.modo-oscuro .theme-btn {
+    background: #E7C99A;
+    color: #25291E;
+}
+
+/* DISEÑO ADAPTABLE */
+@media (max-width: 991px) {
+    .navbar-nav {
+        padding-top: 15px;
     }
 
-    .nav-links {
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-    .hero {
-        flex-direction: column;
-
-        text-align: center;
-
-        gap: 50px;
-    }
-
-    .buttons {
-        justify-content: center;
-    }
-
-    .cards,
-    .technology-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .colors {
-        flex-wrap: wrap;
+    .nav-link {
+        padding: 10px;
     }
 }
 
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 0;
+    }
 
     .hero h1 {
-        font-size: 45px;
+        font-size: 3.5rem;
     }
 
-    .cards,
-    .technology-grid {
-        grid-template-columns: 1fr;
+    .hero-product img {
+        height: 350px;
     }
 
-    .hero-product {
-        width: 280px;
-        height: 280px;
+    .page-header h1 {
+        font-size: 2.3rem;
     }
 
-    .nav-links {
-        gap: 10px;
+    .contact-card {
+        padding: 25px;
     }
-   .logo-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+
+    .navbar-brand img,
+    .navbar-brand .logo-img,
+    .navbar-brand .logo {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px !important;
+        max-height: 40px !important;
+    }
 }
-}
+
